@@ -1,4 +1,3 @@
-// src/components/WorldClock.tsx
 import { useState, useEffect } from "react";
 import type { Clock } from "../types";
 
@@ -11,7 +10,6 @@ export default function WorldClock({ clock, onDelete }: Props) {
   const [time, setTime] = useState<string>("00:00:00");
 
   useEffect(() => {
-    // Вычисляем время по временной зоне
     const updateTime = () => {
       const now = new Date();
       const utc = now.getTime() + now.getTimezoneOffset() * 60000;
@@ -22,13 +20,10 @@ export default function WorldClock({ clock, onDelete }: Props) {
       setTime(`${h}:${m}:${s}`);
     };
 
-    // Обновляем сразу
     updateTime();
 
-    // Запускаем таймер
     const timerId = setInterval(updateTime, 1000);
 
-    // Очистка при размонтировании
     return () => clearInterval(timerId);
   }, [clock.timezoneOffset]);
 

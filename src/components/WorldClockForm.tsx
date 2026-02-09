@@ -1,4 +1,3 @@
-// src/components/WorldClockForm.tsx
 import React, { useState } from "react";
 import type { Clock } from "../types";
 

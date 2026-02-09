@@ -1,4 +1,3 @@
-// src/App.tsx
 import { useState } from "react";
 import WorldClockForm from "./components/WorldClockForm";
 import WorldClockList from "./components/WorldClockList";
